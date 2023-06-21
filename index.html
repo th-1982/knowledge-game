@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="general quiz game to test your general knowledge on history, movies, geography, biology">
+    <meta name="keywords" content="general quiz game, quiz game, history quiz, geography quiz, , movies, biology quiz">
+
+    <!--google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <title>General Quiz</title>
+</head>
+
+<body>
+    <header>
+        <h1>General Quiz</h1>
+        <h2 id="test-knowledge">Test your general Knowledge!</h2>
+    </header>
+
+    <main>
+        <!--welcome section-->
+        <div id="welcome" class="sections show">
+            <!--create a username-->
+            <h3 id="create-username">Please create a username to start the game!</h3>
+            <!--this function is run when form is submited-->
+            <!--<form action="/" onsubmit="(event) => console.log(event)">-->
+            <label for="user-input">Username:</label>
+            <input type="text" id="user-input" name="user-input" required>
+            <div>
+                <button onclick="saveUsersName(event)">Submit</button>
+            </div>
+            <!--- </form>-->
+            <div>
+                <h3 id="rules">Rules:</h3>
+                <ul id="instruction">
+                    <li>Create a username and click 'Submit'</li>
+                    <li>Do not refresh the page.</li>
+                    <li>Choose one of the 4 levels at which you would like to play.</li>
+                    <li>Answer 10 questions by clicking on your choosen answer.</li>
+                    <li>At the end your final score will display.</li>
+                    <li>You can choose to play again.</li>
+                </ul>
+                <h3>Have Fun!!</h3>
+            </div>
+        </div>
+
+        <!--Choose level section-->
+        <div id="level" class="sections hide">
+            <h3 id="user">Welcome User!</h3>
+            <h3>Choose Your Level:</h3>
+
+                <!--this function is run when form is submited-->
+                <!--<form onsubmit="gotoQuiz(event)">-->
+                <input name="level" type="radio" value="Beginner" checked>
+                <label>Beginner</label>
+                <input name="level" type="radio" value="Intermediate">
+                <label>Intermediate</label>
+                <input name="level" type="radio" value="Advanced">
+                <label>Advanced</label>
+                <input name="level" type="radio" value="Expert">
+                <label>Expert</label>
+                <div>
+                <button onclick="goToQuiz(event)">Next</button>
+                </div>
+                <!--</form>-->
+        </div>
+
+        <!--Quiz section and score tracker-->
+        <div id="quiz-div" class="sections hide">
+            <div>
+                <div>
+                    <h3 id="level-choosen">Level Choosen:</h3>
+                </div>
+                <h3 id="quiz-question">What is the capital of USA</h3>
+                <div>
+                    <!--this function is run when form is submited-->
+                    <!--<form onsubmit="forQuiz(event)">-->
+                    <div>
+                        <div data-name="label-option" class="label">Washington DC</div>
+                    </div>
+                    <div>
+                        <div data-name="label-option" class="label">Atlanta</div>
+                    </div>
+                    <div>
+                        <div data-name="label-option" class="label">New York</div>
+                    </div>
+                    <!--</form>-->
+                    <div>
+                        <h3>Question <span id="current-question">1</span> of 10</h3>
+                    </div>
+                    <div id="score-tracker">
+                        <img src="assets/images/green-tick.png" alt="green mark">
+                        <span id="score">0</span>
+                        <img src="assets/images/red-x.png" alt="red mark">
+                        <span id="failed">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--End of quiz section-->
+        <div id="end-of-quiz-div" class="sections hide">
+            <h3><span id="congratulate-message">Congratulations </span><span id="congratulate-user"></span></h3>
+            <img src="assets/images/congratulation-image.jpg" alt="congratulation image" class="congratulatory-image">
+            <h3>Your final score is <span id="final-score"></span> out of 10</h3>
+            <h3>Do you want to play again?</h3>
+            <button id="yes">Yes</button>
+            <button id="play-again">No</button>
+        </div>
+    </main>
+
+    <!--footer with social media links-->
+    <footer>
+        <a href="https://facebook.com" target="_blank" rel="noopener"
+            aria-label="Visit our Facebook page (opens in a new tab)">
+            <i class="fa-brands fa-facebook">
+            </i>
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener"
+            aria-label="Visit our Instagram page (opens in a new tab)">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://youtube.com" target="_blank" rel="noopener"
+            aria-label="Visit our Youtube page (opens in a new tab)">
+            <i class="fa-brands fa-youtube"></i>
+        </a>
+    </footer>
+    <!--font awesome script-->
+    <script src="https://kit.fontawesome.com/2a27a7ddec.js" crossorigin="anonymous"></script>
+    
+    <!--JavaScript link-->
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
